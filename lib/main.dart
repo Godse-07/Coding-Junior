@@ -1,3 +1,4 @@
+import 'package:coding_junior/second_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -7,302 +8,623 @@ void main() {
 class MyApp extends StatelessWidget {
   MyApp({super.key});
 
-  final List<Map<String, String>> videoItems = [
-    {"title": "Introduction", "duration": "3h 30min"},
-    {"title": "Install Software", "duration": "1h 30min"},
-    {"title": "Learn Tools", "duration": "2h 30min"},
-    {"title": "Tracing Sketsa", "duration": "2h 30min"},
-  ];
-
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'Flutter Demo',
-        home: Scaffold(
-          backgroundColor: Colors.grey[200],
-          appBar: AppBar(
-            backgroundColor: Colors.grey[200], // Set appbar background color
-            leading: Padding(
-              padding:
-                  const EdgeInsets.all(8.0), // Add some space around the icon
-              child: Container(
-                decoration: BoxDecoration(
-                  color: Colors.white, // White background
-                  shape: BoxShape.circle, // Circular shape
-                ),
-                child: IconButton(
-                  icon: Icon(Icons.arrow_back,
-                      color: Colors.black), // Set icon color to black
-                  onPressed: () {},
-                ),
-              ),
-            ),
-            title: Text(
-              'Details',
-              style: TextStyle(fontWeight: FontWeight.bold),
-            ),
-            centerTitle: true,
-            actions: [
-              Padding(
-                padding:
-                    const EdgeInsets.all(8.0), // Add some space around the icon
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: Colors.white, // White background
-                    shape: BoxShape.circle, // Circular shape
+      debugShowCheckedModeBanner: false,
+      title: 'Flutter Demo',
+      home: Scaffold(
+        backgroundColor: Colors.grey[200],
+        body: SafeArea(
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                // User profile section
+                ListTile(
+                  leading: CircleAvatar(
+                    radius: 30,
+                    backgroundImage: AssetImage('assets/images/girl.png'),
                   ),
-                  child: IconButton(
-                    icon: Icon(Icons.notifications,
-                        color: Colors.black), // Set icon color to black
-                    onPressed: () {},
-                  ),
-                ),
-              ),
-              // Add spacing between the icons
-            ],
-          ),
-          body: SingleChildScrollView(
-            child: Padding(
-              padding: EdgeInsets.all(16.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Container(
-                    height: MediaQuery.of(context).size.height * 0.3,
-                    margin: EdgeInsets.all(20),
+                  title: Text('Christiana Amandla'),
+                  subtitle: Text('Let\'s Learning to smart'),
+                  trailing: Container(
                     decoration: BoxDecoration(
                       color: Colors.white,
-                      borderRadius: BorderRadius.circular(20),
+                      shape: BoxShape.circle,
                     ),
-                    padding: EdgeInsets.all(20),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Our Student',
-                          style: TextStyle(
-                              fontSize: 18, fontWeight: FontWeight.bold),
-                        ),
-                        SizedBox(height: 10),
-                        Row(
-                          children: List.generate(
-                            5,
-                            (index) => Padding(
-                              padding: EdgeInsets.only(right: 8),
-                              child: CircleAvatar(
-                                backgroundImage:
-                                    AssetImage('assets/images/human.jpg'),
-                                radius: 20,
-                                backgroundColor: Colors.grey[300],
-                              ),
-                            ),
-                          ),
-                        ),
-                        SizedBox(height: 20),
-                        Text(
-                          'Photoshop Editing Course',
-                          style: TextStyle(
-                              fontSize: 24, fontWeight: FontWeight.bold),
-                        ),
-                        Text(
-                          'A representation that can convey the three-dimensional aspect of a design through a two-dimensional medium.',
-                          style: TextStyle(color: Colors.grey[600]),
-                        ),
-                        SizedBox(height: 20),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Row(
-                              children: [
-                                Icon(Icons.video_collection, size: 20),
-                                SizedBox(width: 5),
-                                Text('30 Lessons'),
-                              ],
-                            ),
-                            Row(
-                              children: [
-                                Icon(Icons.timer, size: 20),
-                                SizedBox(width: 5),
-                                Text('13h 30min'),
-                              ],
-                            ),
-                          ],
-                        ),
-                      ],
+                    child: IconButton(
+                      icon: Icon(Icons.search),
+                      onPressed: () {},
                     ),
                   ),
-                  SizedBox(height: 20),
-                  Row(
+                ),
+                // Mathematics course card
+                Padding(
+                  padding: EdgeInsets.all(16),
+                  child: Card(
+                    color: Color(0xFFb9dd6b),
+                    child: Padding(
+                      padding: EdgeInsets.all(16),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Container(
+                            decoration: BoxDecoration(
+                              color: Color(0xFFD4EBA2),
+                              borderRadius: BorderRadius.circular(5),
+                            ),
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 30, vertical: 30),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  'Mathematics Course',
+                                  style: TextStyle(
+                                    fontSize: 17.5,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                                SizedBox(width: 10),
+                                Container(
+                                  decoration: BoxDecoration(
+                                    color: Color(0xFFb9dd6b),
+                                    borderRadius: BorderRadius.circular(5),
+                                  ),
+                                  padding: EdgeInsets.symmetric(
+                                      horizontal: 10, vertical: 5),
+                                  child: Row(
+                                    children: [
+                                      Icon(Icons.calendar_view_month_sharp,
+                                          color: Colors.black),
+                                      Text('19 Nov, 2023'),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          SizedBox(height: 20),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Row(
+                                children: [
+                                  Container(
+                                    height: 50,
+                                    width: 50,
+                                    decoration: BoxDecoration(
+                                      color: Color(0xFFD4EBA2),
+                                      shape: BoxShape.circle,
+                                    ),
+                                    child: Center(
+                                      child: Icon(
+                                        Icons.task_alt_rounded,
+                                        color: Color(0xFFb9dd6b),
+                                      ),
+                                    ),
+                                  ),
+                                  SizedBox(width: 15),
+                                  Column(
+                                    children: [
+                                      Text('Completed'),
+                                      Text('20',
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 18)),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                              Container(
+                                height: 70,
+                                width: 1.2,
+                                color: Colors.white,
+                              ),
+                              Row(
+                                children: [
+                                  Container(
+                                    height: 50,
+                                    width: 50,
+                                    decoration: BoxDecoration(
+                                      color: Color(0xFFD4EBA2),
+                                      shape: BoxShape.circle,
+                                    ),
+                                    child: Center(
+                                      child: Icon(
+                                        Icons.timelapse_rounded,
+                                        color: Color(0xFFb9dd6b),
+                                      ),
+                                    ),
+                                  ),
+                                  SizedBox(width: 15),
+                                  Column(
+                                    children: [
+                                      Text('Hours Spent'),
+                                      Text('455',
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.bold)),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+                Container(
+                  padding: EdgeInsets.symmetric(horizontal: 25),
+                  margin: EdgeInsets.only(bottom: 20, top: 15),
+                  child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Container(
-                        margin: EdgeInsets.only(left: 20),
-                        child: Text(
-                          'Video',
+                      Text('Popular Course',
                           style: TextStyle(
-                              fontSize: 22, fontWeight: FontWeight.bold),
-                        ),
-                      ),
+                              fontSize: 18, fontWeight: FontWeight.bold)),
+                      Text('View All', style: TextStyle(color: Colors.blue)),
+                    ],
+                  ),
+                ),
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: [
+                      SizedBox(width: 20),
                       Container(
-                        margin: EdgeInsets.only(right: 20),
-                        child: Text(
-                          'View All',
-                          style:
-                              TextStyle(color: Colors.grey[600], fontSize: 16),
+                        height: 300,
+                        width: 300,
+                        decoration: BoxDecoration(
+                          // color: Colors.white,
+                          borderRadius: BorderRadius.circular(5),
+                        ),
+                        child: Builder(builder: (BuildContext context) {
+                          return GestureDetector(
+                            onTap: () {
+                              // Use a Builder to ensure the correct context for Navigator
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => SecondPage(),
+                                ),
+                              );
+                            },
+                            child: Card(
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(16.0),
+                              ),
+                              elevation: 4.0,
+                              child: Padding(
+                                padding: const EdgeInsets.all(16.0),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    // Photoshop logo
+                                    Center(
+                                      child: Container(
+                                        height: 60,
+                                        width: 60,
+                                        decoration: BoxDecoration(
+                                          color: Color(
+                                              0xff001c2e), // Placeholder for logo background
+                                          borderRadius:
+                                              BorderRadius.circular(8),
+                                        ),
+                                        child: Center(
+                                          child: Text(
+                                            'Ps',
+                                            style: TextStyle(
+                                              color: Color(0xff219bf1),
+                                              fontSize: 24,
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    SizedBox(height: 16),
+
+                                    // Course Title
+                                    Text(
+                                      'Photoshop Editing \n Course',
+                                      style: TextStyle(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                    SizedBox(height: 10),
+
+                                    // Participant section
+                                    Row(
+                                      children: [
+                                        Container(
+                                          child: Row(
+                                            children: [
+                                              Stack(
+                                                children: [
+                                                  CircleAvatar(
+                                                    radius: 30,
+                                                    backgroundImage: AssetImage(
+                                                        'assets/images/person1.png'),
+                                                  ),
+                                                  Positioned(
+                                                    left: 20,
+                                                    child: CircleAvatar(
+                                                      radius: 30,
+                                                      backgroundImage: AssetImage(
+                                                          'assets/images/person2.png'),
+                                                    ),
+                                                  ),
+                                                  Positioned(
+                                                    left: 35,
+                                                    child: CircleAvatar(
+                                                      radius: 30,
+                                                      backgroundImage: AssetImage(
+                                                          'assets/images/person3.png'),
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                        SizedBox(width: 10),
+                                        Container(
+                                          height: 24,
+                                          width: 24,
+                                          decoration: BoxDecoration(
+                                            color: Colors.green,
+                                            shape: BoxShape.circle,
+                                          ),
+                                          child: Center(
+                                            child: Text(
+                                              '+20',
+                                              style: TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 12,
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                        SizedBox(width: 10),
+                                        Text(
+                                          'Participant',
+                                          style: TextStyle(color: Colors.grey),
+                                        ),
+                                      ],
+                                    ),
+                                    SizedBox(height: 16),
+                                    Container(
+                                      height: 2,
+                                      color: Colors.grey,
+                                    ),
+
+                                    // Rating and Lessons
+                                    Padding(
+                                      padding: const EdgeInsets.all(10.0),
+                                      child: Row(
+                                        children: [
+                                          Icon(Icons.star,
+                                              color: Colors.orange, size: 20),
+                                          SizedBox(width: 4),
+                                          Text(
+                                            '4.8',
+                                            style: TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                          ),
+                                          SizedBox(width: 4),
+                                          Text('(230)',
+                                              style: TextStyle(
+                                                  color: Colors.grey)),
+                                          Spacer(),
+                                          Icon(Icons.play_circle_outline,
+                                              size: 20),
+                                          SizedBox(width: 4),
+                                          Text(
+                                            '30 Lessons',
+                                            style:
+                                                TextStyle(color: Colors.grey),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          );
+                        }),
+                      ),
+                      SizedBox(width: 20),
+                      Container(
+                        height: 300,
+                        width: 300,
+                        decoration: BoxDecoration(
+                          // color: Colors.white,
+                          borderRadius: BorderRadius.circular(5),
+                        ),
+                        child: Card(
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(16.0),
+                          ),
+                          elevation: 4.0,
+                          child: Padding(
+                            padding: const EdgeInsets.all(16.0),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                // Photoshop logo
+                                Center(
+                                  child: Container(
+                                    height: 60,
+                                    width: 60,
+                                    decoration: BoxDecoration(
+                                      color: Color(
+                                          0xff2d0003), // Placeholder for logo background
+                                      borderRadius: BorderRadius.circular(8),
+                                    ),
+                                    child: Center(
+                                      child: Text(
+                                        'AI',
+                                        style: TextStyle(
+                                          color: Color(0xffff8e25),
+                                          fontSize: 24,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(height: 16),
+
+                                // Course Title
+                                Text(
+                                  'Illustrator Editing \n Course',
+                                  style: TextStyle(
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                                SizedBox(height: 10),
+
+                                // Participant section
+                                Row(
+                                  children: [
+                                    Container(
+                                      child: Row(
+                                        children: [
+                                          Stack(
+                                            children: [
+                                              CircleAvatar(
+                                                radius: 30,
+                                                backgroundImage: AssetImage(
+                                                    'assets/images/person1.png'),
+                                              ),
+                                              Positioned(
+                                                left: 20,
+                                                child: CircleAvatar(
+                                                  radius: 30,
+                                                  backgroundImage: AssetImage(
+                                                      'assets/images/person2.png'),
+                                                ),
+                                              ),
+                                              Positioned(
+                                                left: 35,
+                                                child: CircleAvatar(
+                                                  radius: 30,
+                                                  backgroundImage: AssetImage(
+                                                      'assets/images/person3.png'),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    SizedBox(width: 10),
+                                    Container(
+                                      height: 24,
+                                      width: 24,
+                                      decoration: BoxDecoration(
+                                        color: Colors.green,
+                                        shape: BoxShape.circle,
+                                      ),
+                                      child: Center(
+                                        child: Text(
+                                          '+20',
+                                          style: TextStyle(
+                                            color: Colors.white,
+                                            fontSize: 12,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    SizedBox(width: 10),
+                                    Text(
+                                      'Participant',
+                                      style: TextStyle(color: Colors.grey),
+                                    ),
+                                  ],
+                                ),
+                                SizedBox(height: 16),
+                                Container(
+                                  height: 2,
+                                  color: Colors.grey,
+                                ),
+
+                                // Rating and Lessons
+                                Padding(
+                                  padding: const EdgeInsets.all(10.0),
+                                  child: Row(
+                                    children: [
+                                      Icon(Icons.star,
+                                          color: Colors.orange, size: 20),
+                                      SizedBox(width: 4),
+                                      Text(
+                                        '4.8',
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                      SizedBox(width: 4),
+                                      Text('(230)',
+                                          style: TextStyle(color: Colors.grey)),
+                                      Spacer(),
+                                      Icon(Icons.play_circle_outline, size: 20),
+                                      SizedBox(width: 4),
+                                      Text(
+                                        '30 Lessons',
+                                        style: TextStyle(color: Colors.grey),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
                         ),
                       ),
                     ],
                   ),
-                  SizedBox(height: 10),
-                  Container(
-                    height: 350, // Set an appropriate height
-                    child: ListView.builder(
-                      itemCount: videoItems.length,
-                      itemBuilder: (BuildContext context, int index) {
-                        final videoItem = videoItems[index];
-                        return Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 8.0),
-                          child: Container(
-                            padding: EdgeInsets.all(16),
-                            decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(10),
-                              boxShadow: [
-                                BoxShadow(
-                                  color: Colors.grey.withOpacity(0.1),
-                                  spreadRadius: 1,
-                                  blurRadius: 3,
-                                  offset: Offset(0, 2),
-                                ),
-                              ],
-                            ),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Row(
-                                  children: [
-                                    Container(
-                                      width: 80,
-                                      height: 80,
-                                      decoration: BoxDecoration(
-                                        color: Colors.white,
-                                        borderRadius: BorderRadius.circular(10),
-                                        border: Border.all(
-                                          color: Colors.grey[400]!,
-                                          width: 2,
-                                        ),
-                                      ),
-                                      child: Icon(
-                                        Icons.lock,
-                                        color: Colors.grey[600],
-                                        size: 40,
-                                      ),
-                                    ),
-                                    SizedBox(width: 10),
-                                    Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          videoItem["title"]!,
-                                          style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 16,
-                                          ),
-                                        ),
-                                        SizedBox(height: 5),
-                                        Row(
-                                          children: [
-                                            Icon(Icons.access_time, size: 16),
-                                            SizedBox(width: 5),
-                                            Text(videoItem["duration"]!),
-                                          ],
-                                        ),
-                                      ],
-                                    ),
-                                  ],
-                                ),
-                                Container(
-                                  height: 50,
-                                  width: 130,
-                                  decoration: BoxDecoration(
-                                    border:
-                                        Border.all(color: Colors.grey[400]!),
-                                  ),
-                                  child: TextButton.icon(
-                                    onPressed: () {},
-                                    icon: Icon(Icons.play_circle_fill,
-                                        color: Colors.green),
-                                    label: Container(
-                                      child: Text(
-                                        'Play Video',
-                                        style: TextStyle(color: Colors.green),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        );
-                      },
-                    ),
+                ),
+                // Popular courses section
+                Container(
+                  padding: EdgeInsets.symmetric(horizontal: 25),
+                  margin: EdgeInsets.only(bottom: 20, top: 15),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text('Popular Course',
+                          style: TextStyle(
+                              fontSize: 18, fontWeight: FontWeight.bold)),
+                      Text('View All', style: TextStyle(color: Colors.blue)),
+                    ],
                   ),
-                  SizedBox(height: 20),
-                ],
-              ),
+                ),
+                CourseCard(
+                  title: 'Photoshop Editing Course',
+                  icon: 'Ps',
+                  rating: 4.8,
+                  lessons: 30,
+                ),
+                CourseCard(
+                  title: 'Illustrator Editing Course',
+                  icon: 'Ai',
+                  rating: 4.8,
+                  lessons: 30,
+                ),
+                CourseCard(
+                  title: 'Adobe Xd Editing Course',
+                  icon: 'Xd',
+                  rating: 4.8,
+                  lessons: 30,
+                ),
+              ],
             ),
           ),
-          bottomNavigationBar: Container(
-            color: Colors.white,
-            padding: EdgeInsets.only(bottom: 40, top: 20),
-            child: Row(
+        ),
+        bottomNavigationBar: BottomNavigationBar(
+          type: BottomNavigationBarType.fixed,
+          items: [
+            BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.favorite), label: 'Favorites'),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.notifications), label: 'Notifications'),
+            BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class CourseCard extends StatelessWidget {
+  final String title;
+  final String icon;
+  final double rating;
+  final int lessons;
+
+  const CourseCard({
+    Key? key,
+    required this.title,
+    required this.icon,
+    required this.rating,
+    required this.lessons,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      margin: EdgeInsets.all(16),
+      color: Colors.white,
+      child: Padding(
+        padding: EdgeInsets.all(16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
               children: [
-                Expanded(
-                  flex: 1,
-                  child: Container(
-                    margin: EdgeInsets.only(left: 10),
-                    height: MediaQuery.of(context).size.height * 0.07,
-                    decoration: BoxDecoration(
-                      color: const Color(0xFFb9dd6b),
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: Icon(
-                      Icons.bookmark_add,
-                      color: Colors.white,
-                      size: 40,
+                Container(
+                  width: 100,
+                  height: 100,
+                  color: Colors.grey[100],
+                  child: Center(
+                    child: Container(
+                      height: 50,
+                      width: 50,
+                      color: Color(0xff3e062f),
+                      child: Center(
+                        child: Text(
+                          icon, // use the `icon` variable
+                          style: TextStyle(
+                            color: Color(0xffe6a9f1),
+                            fontSize: 24,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
                     ),
                   ),
                 ),
-                SizedBox(width: 30),
+                SizedBox(width: 16),
                 Expanded(
-                  flex: 3,
-                  child: Container(
-                    margin: EdgeInsets.only(right: 10),
-                    height: MediaQuery.of(context).size.height * 0.07,
-                    child: ElevatedButton(
-                      child: Text(
-                        'Enroll Now',
+                  // This should be wrapping the Text for `title` correctly now
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        title,
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
-                          fontSize: 20,
+                          fontSize: 16,
                         ),
                       ),
-                      onPressed: () {},
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: const Color(0xFFb9dd6b),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10),
-                        ),
+                      SizedBox(height: 10), // Adjust spacing as needed
+                      Row(
+                        children: [
+                          Icon(Icons.star, color: Colors.yellow),
+                          SizedBox(width: 4), // Space between icon and text
+                          Text('$rating (24k)'),
+                          SizedBox(
+                            width: 30,
+                          ), // Aligns the next row to the far right
+                          Icon(Icons.access_time),
+                          SizedBox(width: 4), // Space between icon and text
+                          Text('$lessons Lessons'),
+                        ],
                       ),
-                    ),
+                    ],
                   ),
                 )
               ],
             ),
-          ),
-        ));
+          ],
+        ),
+      ),
+    );
   }
 }
