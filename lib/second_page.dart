@@ -1,3 +1,4 @@
+import 'package:coding_junior/third_page.dart';
 import 'package:flutter/material.dart';
 
 class SecondPage extends StatelessWidget {
@@ -278,7 +279,10 @@ class SecondPage extends StatelessWidget {
                       fontSize: 20,
                     ),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => ThirdPage()));
+                  },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color(0xFFb9dd6b),
                     shape: RoundedRectangleBorder(
